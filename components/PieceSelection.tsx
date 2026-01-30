@@ -175,26 +175,28 @@ export default function PieceSelection({ onSelect }: PieceSelectionProps) {
             )}
           </div>
 
-          <div className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-700">
-              楽器パートを選択
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {beethoven5Data.parts.map((part) => (
-                <button
-                  key={part}
-                  onClick={() => handlePartSelect(part as Part)}
-                  className={`p-4 rounded-lg border-2 transition-all ${
-                    selectedPart === part
-                      ? "bg-indigo-600 text-white border-indigo-700 shadow-lg transform scale-105"
-                      : "bg-white text-gray-700 border-gray-300 hover:border-indigo-400 hover:shadow-md"
-                  }`}
-                >
-                  <div className="font-semibold">{part}</div>
-                </button>
-              ))}
+          {selectedPiece && (
+            <div className="mb-8">
+              <h2 className="text-2xl font-semibold mb-4 text-gray-700">
+                楽器パートを選択
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {selectedPiece.parts.map((part) => (
+                  <button
+                    key={part}
+                    onClick={() => handlePartSelect(part as Part)}
+                    className={`p-4 rounded-lg border-2 transition-all ${
+                      selectedPart === part
+                        ? "bg-indigo-600 text-white border-indigo-700 shadow-lg transform scale-105"
+                        : "bg-white text-gray-700 border-gray-300 hover:border-indigo-400 hover:shadow-md"
+                    }`}
+                  >
+                    <div className="font-semibold">{part}</div>
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="text-center">
             <button
