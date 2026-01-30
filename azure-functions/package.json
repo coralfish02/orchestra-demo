@@ -1,0 +1,21 @@
+{
+  "name": "orchestra-practice-azure-functions",
+  "version": "1.0.0",
+  "description": "Azure Functions for Orchestra Practice App",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prestart": "npm run build",
+    "start": "func start",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.5.1"
+  },
+  "devDependencies": {
+    "@azure/functions-core-tools": "^4.0.5455",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

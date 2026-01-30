@@ -1,0 +1,59 @@
+{
+  "piece_id": "beethoven_5",
+  "title": "交響曲第5番 ハ短調『運命』",
+  "composer": "ルートヴィヒ・ヴァン・ベートーヴェン",
+  "movement": "第1楽章 Allegro con brio",
+  "parts": ["Violin I", "Violin II", "Viola", "Cello"],
+  "critical_points": [
+    {
+      "id": 1,
+      "measure": "1-5",
+      "part": "All",
+      "priority": "critical",
+      "title": "運命動機：最も有名な冒頭",
+      "description": "「タタタターン」の運命動機で始まる冒頭部分。全楽器がユニゾンで演奏する重要な箇所です。",
+      "image_url": "/images/beethoven_5_m1.png",
+      "youtube_url": "https://www.youtube.com/embed/fOk8Tm815lE?start=0"
+    },
+    {
+      "id": 2,
+      "measure": "92-96",
+      "part": "Violin I",
+      "priority": "critical",
+      "title": "ソロ箇所：全体が聞いている",
+      "description": "第1ヴァイオリンが主旋律を担当する重要なソロ箇所。全体があなたの演奏を聞いています。",
+      "image_url": "/images/beethoven_5_m92.png",
+      "youtube_url": "https://www.youtube.com/embed/fOk8Tm815lE?start=180"
+    },
+    {
+      "id": 3,
+      "measure": "140-150",
+      "part": "All",
+      "priority": "important",
+      "title": "展開部：テンポとリズムに注意",
+      "description": "展開部に入る重要な転換点。テンポが揺れやすい箇所なので、指揮者をしっかり見てください。",
+      "image_url": "/images/beethoven_5_m140.png",
+      "youtube_url": "https://www.youtube.com/embed/fOk8Tm815lE?start=280"
+    },
+    {
+      "id": 4,
+      "measure": "240-248",
+      "part": "All",
+      "priority": "critical",
+      "title": "コーダ：クライマックス、テンポ加速",
+      "description": "第1楽章のクライマックス。テンポが加速し、全楽器が一体となって盛り上がる箇所です。",
+      "image_url": "/images/beethoven_5_m240.png",
+      "youtube_url": "https://www.youtube.com/embed/fOk8Tm815lE?start=420"
+    },
+    {
+      "id": 5,
+      "measure": "60-70",
+      "part": "Violin II, Viola",
+      "priority": "important",
+      "title": "長い休符明けの入り",
+      "description": "長い休符の後に突然入る箇所。他パートの音をよく聞いて、正確なタイミングで入ることが重要です。",
+      "image_url": "/images/beethoven_5_m60.png",
+      "youtube_url": "https://www.youtube.com/embed/fOk8Tm815lE?start=120"
+    }
+  ]
+}
