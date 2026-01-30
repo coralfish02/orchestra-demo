@@ -4,6 +4,75 @@
   "composer": "ルートヴィヒ・ヴァン・ベートーヴェン",
   "movement": "第1楽章 Allegro con brio",
   "parts": ["Violin I", "Violin II", "Viola", "Cello"],
+  "musical_terms": [
+    {
+      "term": "Allegro con brio",
+      "language": "イタリア語",
+      "category": "速度記号",
+      "appears_in": "楽章タイトル"
+    },
+    {
+      "term": "fortissimo",
+      "abbreviation": "ff",
+      "language": "イタリア語",
+      "category": "強弱記号",
+      "appears_in": "楽譜全体"
+    },
+    {
+      "term": "pianissimo",
+      "abbreviation": "pp",
+      "language": "イタリア語",
+      "category": "強弱記号",
+      "appears_in": "楽譜全体"
+    },
+    {
+      "term": "crescendo",
+      "abbreviation": "cresc.",
+      "language": "イタリア語",
+      "category": "強弱記号",
+      "appears_in": "楽譜全体"
+    },
+    {
+      "term": "diminuendo",
+      "abbreviation": "dim.",
+      "language": "イタリア語",
+      "category": "強弱記号",
+      "appears_in": "楽譜全体"
+    },
+    {
+      "term": "sforzando",
+      "abbreviation": "sf",
+      "language": "イタリア語",
+      "category": "強弱記号",
+      "appears_in": "運命動機など"
+    },
+    {
+      "term": "staccato",
+      "language": "イタリア語",
+      "category": "奏法記号",
+      "appears_in": "楽譜全体"
+    },
+    {
+      "term": "legato",
+      "language": "イタリア語",
+      "category": "奏法記号",
+      "appears_in": "楽譜全体"
+    },
+    {
+      "term": "ritardando",
+      "abbreviation": "rit.",
+      "language": "イタリア語",
+      "category": "速度記号",
+      "appears_in": "終結部など"
+    },
+    {
+      "term": "accelerando",
+      "abbreviation": "accel.",
+      "language": "イタリア語",
+      "category": "速度記号",
+      "appears_in": "コーダなど"
+    }
+  ],
   "critical_points": [
     {
       "id": 1,

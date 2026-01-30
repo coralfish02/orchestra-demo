@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import CriticalPointCard from "./CriticalPointCard";
 import MarkdownRenderer from "./MarkdownRenderer";
+import MusicalTermCard from "./MusicalTermCard";
 
 type Part = "Violin I" | "Violin II" | "Viola" | "Cello";
 
@@ -17,12 +18,21 @@ interface CriticalPoint {
   youtube_url: string;
 }
 
+interface MusicalTerm {
+  term: string;
+  abbreviation?: string;
+  language: string;
+  category: string;
+  appears_in?: string;
+}
+
 interface PieceData {
   piece_id: string;
   title: string;
   composer: string;
   movement: string;
   parts: string[];
+  musical_terms?: MusicalTerm[];
   critical_points: CriticalPoint[];
 }
 
@@ -138,6 +148,22 @@ ${pieceData.title}は、${pieceData.composer}が作曲した交響曲です。�
             )}
           </div>
         </div>
+
+        {pieceData.musical_terms && pieceData.musical_terms.length > 0 && (
+          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-6">
+            <h2 className="text-2xl font-semibold mb-6 text-gray-700">
+              🎵 この曲に出てくる音楽用語
+            </h2>
+            <p className="text-gray-600 mb-4">
+              用語をクリックすると、AIが詳しく解説します。
+            </p>
+            <div className="space-y-3">
+              {pieceData.musical_terms.map((term, index) => (
+                <MusicalTermCard key={index} term={term} />
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
           <h2 className="text-2xl font-semibold mb-6 text-gray-700">
