@@ -1,0 +1,104 @@
+{
+  "pieces": [
+    {
+      "piece_id": "beethoven_5",
+      "title": "交響曲第5番 ハ短調『運命』",
+      "composer": "ルートヴィヒ・ヴァン・ベートーヴェン",
+      "composer_en": "Ludwig van Beethoven",
+      "opus": "Op. 67",
+      "year": 1808,
+      "genre": "交響曲",
+      "movements": [
+        {
+          "number": 1,
+          "title": "Allegro con brio",
+          "key": "ハ短調"
+        }
+      ],
+      "parts": ["Violin I", "Violin II", "Viola", "Cello"],
+      "data_file": "beethoven_5_data.json",
+      "popularity": 5,
+      "tags": ["運命", "ベートーヴェン", "交響曲", "クラシック", "有名"]
+    },
+    {
+      "piece_id": "beethoven_9",
+      "title": "交響曲第9番 ニ短調『合唱付き』",
+      "composer": "ルートヴィヒ・ヴァン・ベートーヴェン",
+      "composer_en": "Ludwig van Beethoven",
+      "opus": "Op. 125",
+      "year": 1824,
+      "genre": "交響曲",
+      "movements": [
+        {
+          "number": 1,
+          "title": "Allegro ma non troppo, un poco maestoso",
+          "key": "ニ短調"
+        }
+      ],
+      "parts": ["Violin I", "Violin II", "Viola", "Cello"],
+      "data_file": null,
+      "popularity": 5,
+      "tags": ["ベートーヴェン", "交響曲", "合唱", "歓喜の歌", "有名"]
+    },
+    {
+      "piece_id": "mozart_40",
+      "title": "交響曲第40番 ト短調",
+      "composer": "ヴォルフガング・アマデウス・モーツァルト",
+      "composer_en": "Wolfgang Amadeus Mozart",
+      "opus": "K. 550",
+      "year": 1788,
+      "genre": "交響曲",
+      "movements": [
+        {
+          "number": 1,
+          "title": "Molto allegro",
+          "key": "ト短調"
+        }
+      ],
+      "parts": ["Violin I", "Violin II", "Viola", "Cello"],
+      "data_file": null,
+      "popularity": 4,
+      "tags": ["モーツァルト", "交響曲", "クラシック", "有名"]
+    },
+    {
+      "piece_id": "dvorak_9",
+      "title": "交響曲第9番 ホ短調『新世界より』",
+      "composer": "アントニン・ドヴォルザーク",
+      "composer_en": "Antonín Dvořák",
+      "opus": "Op. 95",
+      "year": 1893,
+      "genre": "交響曲",
+      "movements": [
+        {
+          "number": 1,
+          "title": "Adagio - Allegro molto",
+          "key": "ホ短調"
+        }
+      ],
+      "parts": ["Violin I", "Violin II", "Viola", "Cello"],
+      "data_file": null,
+      "popularity": 4,
+      "tags": ["ドヴォルザーク", "交響曲", "新世界", "有名"]
+    },
+    {
+      "piece_id": "tchaikovsky_6",
+      "title": "交響曲第6番 ロ短調『悲愴』",
+      "composer": "ピョートル・チャイコフスキー",
+      "composer_en": "Pyotr Ilyich Tchaikovsky",
+      "opus": "Op. 74",
+      "year": 1893,
+      "genre": "交響曲",
+      "movements": [
+        {
+          "number": 1,
+          "title": "Adagio - Allegro non troppo",
+          "key": "ロ短調"
+        }
+      ],
+      "parts": ["Violin I", "Violin II", "Viola", "Cello"],
+      "data_file": null,
+      "popularity": 4,
+      "tags": ["チャイコフスキー", "交響曲", "悲愴", "有名"]
+    }
+  ]
+}
