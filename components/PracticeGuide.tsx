@@ -30,6 +30,7 @@ interface PieceData {
   piece_id: string;
   title: string;
   composer: string;
+  composer_en?: string;
   movement: string;
   parts: string[];
   musical_terms?: MusicalTerm[];
@@ -76,6 +77,7 @@ export default function PracticeGuide({
           body: JSON.stringify({
             pieceTitle: pieceData.title,
             composer: pieceData.composer,
+            composerEn: pieceData.composer_en,
           }),
         });
 

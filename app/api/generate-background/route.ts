@@ -1,11 +1,50 @@
 import { NextRequest, NextResponse } from "next/server";
+import { fetchPieceWikipediaInfo, extractStructuredInfo } from "@/lib/wikipedia";
 
 export async function POST(request: NextRequest) {
   try {
-    const { pieceTitle, composer } = await request.json();
+    const { pieceTitle, composer, composerEn } = await request.json();
+
+    // Wikipediaから情報を取得
+    let wikipediaInfo = null;
+    let structuredInfo = null;
+    try {
+      wikipediaInfo = await fetchPieceWikipediaInfo(
+        pieceTitle,
+        composer,
+        composerEn
+      );
+      if (wikipediaInfo) {
+        // Wikipedia情報を構造化
+        structuredInfo = extractStructuredInfo(wikipediaInfo);
+      }
+    } catch (error) {
+      console.error("Error fetching Wikipedia info:", error);
+      // Wikipedia取得に失敗しても続行
+    }
+
+    // Wikipedia情報を構造化してプロンプトに含める
+    let wikipediaContext = "";
+    if (structuredInfo) {
+      wikipediaContext = `
+【参考情報（Wikipedia）】
+${structuredInfo.year ? `- 作曲年: ${structuredInfo.year}年` : ''}
+${structuredInfo.premiere ? `- 初演: ${structuredInfo.premiere}` : ''}
+${structuredInfo.movements ? `- 楽章構成: ${structuredInfo.movements}` : ''}
+${structuredInfo.key ? `- 調性: ${structuredInfo.key}` : ''}
+${structuredInfo.keyFeatures ? `- 特徴: ${structuredInfo.keyFeatures}` : ''}
+
+詳細情報:
+${structuredInfo.fullExtract.substring(0, 500)}${structuredInfo.fullExtract.length > 500 ? '...' : ''}
+`;
+    }
 
     const prompt = `
-以下の情報を元に、${pieceTitle}（${composer}作曲）について、アマチュアオーケストラ演奏家向けに詳しく解説してください。
+${pieceTitle}（${composer}作曲）について、アマチュアオーケストラ演奏家向けに詳しく解説してください。
+
+${wikipediaContext ? `${wikipediaContext}
+
+上記のWikipedia情報を基に、正確で詳細な解説を作成してください。Wikipedia情報に含まれている事実（作曲年、初演、楽章構成など）は正確に反映してください。` : '曲の情報を調べて、以下のセクションに分けて解説してください。'}
 
 以下のセクションに分けて、マークダウン形式で記述してください：
 
@@ -49,7 +88,15 @@ export async function POST(request: NextRequest) {
           messages: [
             {
               role: "system",
-              content: "あなたはクラシック音楽の専門家です。アマチュアオーケストラ演奏家向けに、分かりやすく簡潔な解説を提供してください。",
+              content: `あなたはクラシック音楽の専門家です。アマチュアオーケストラ演奏家向けに、分かりやすく詳細な解説を提供してください。
+
+${wikipediaContext ? 'Wikipedia情報を基に、正確で信頼性の高い解説を作成してください。Wikipedia情報に含まれている事実（作曲年、初演、楽章構成など）は必ず正確に反映してください。' : ''}
+
+解説は以下の点を重視してください：
+- 歴史的背景や作曲の経緯を詳しく説明
+- 楽章構成や形式を明確に説明
+- アマチュア演奏家が知っておくべき実践的な情報を含める
+- 専門用語は必要に応じて説明を加える`,
             },
             {
               role: "user",
@@ -90,7 +137,15 @@ export async function POST(request: NextRequest) {
           messages: [
             {
               role: "system",
-              content: "あなたはクラシック音楽の専門家です。アマチュアオーケストラ演奏家向けに、分かりやすく簡潔な解説を提供してください。",
+              content: `あなたはクラシック音楽の専門家です。アマチュアオーケストラ演奏家向けに、分かりやすく詳細な解説を提供してください。
+
+${wikipediaContext ? 'Wikipedia情報を基に、正確で信頼性の高い解説を作成してください。Wikipedia情報に含まれている事実（作曲年、初演、楽章構成など）は必ず正確に反映してください。' : ''}
+
+解説は以下の点を重視してください：
+- 歴史的背景や作曲の経緯を詳しく説明
+- 楽章構成や形式を明確に説明
+- アマチュア演奏家が知っておくべき実践的な情報を含める
+- 専門用語は必要に応じて説明を加える`,
             },
             {
               role: "user",

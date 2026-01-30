@@ -24,13 +24,17 @@ export default function Home() {
         const data = await response.json();
         if (data.data) {
           // データファイルがある場合
-          setPieceData(data.data);
+          setPieceData({
+            ...data.data,
+            composer_en: data.composer_en, // composer_enを追加
+          });
         } else {
           // データファイルがない場合、基本情報から作成
           setPieceData({
             piece_id: data.piece_id,
             title: data.title,
             composer: data.composer,
+            composer_en: data.composer_en, // composer_enを追加
             movement: data.movements[0]?.title || "第1楽章",
             parts: data.parts,
             critical_points: [],
